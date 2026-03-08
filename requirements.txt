@@ -1,0 +1,14 @@
+# NeuroBridge — voice input (Whisper, audio, tray)
+faster-whisper>=1.0.0
+sounddevice>=0.4.6
+numpy>=1.24.0
+pynput>=1.7.6
+pyperclip>=1.8.2
+
+# NeuroBridge — voice output (tray, hotkeys, Edge)
+keyboard>=0.13.5
+Pillow>=10.0.0
+pystray>=0.19.0
+
+# Config (optional .env)
+python-dotenv>=1.0.0
