@@ -86,7 +86,7 @@ The project includes a **Stealth Launcher** (VBS) to run both Input and Output m
 
 ---
 
-## 🎓 Professional Impact (O-1 Visa Context)
+## 🎓 Professional Impact
 
 NeuroBridge is an **Original Contribution** to the field of Human-Computer Interaction (HCI). It demonstrates architectural innovation in reducing task-switching latency and implementing secure, air-gapped transcription pipelines for sensitive engineering data.
 
