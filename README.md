@@ -1,7 +1,7 @@
 
 ---
 
-# ⌨️ NeuroBridge — A Zero-UI Cognitive Interface
+# ⌨️ NeuroBridge — Cognitive Interface
 
 ![Python](https://img.shields.io/badge/python-3.10%2B-blue.svg)
 ![Platform](https://img.shields.io/badge/platform-Windows-lightgrey.svg)
