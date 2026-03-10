@@ -88,7 +88,7 @@ NeuroBridge employs a hybrid architecture to balance absolute privacy with high-
 
 ---
 
-**Architect:** SanMog
+**Architect:** SanMog  
 **Status:** 🟢 Operational | v1.1  
 **License:** MIT  
 
