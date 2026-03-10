@@ -1,9 +1,9 @@
 
 ***
 
-# 🧠 NeuroBridge (Cognitive Layer)
+# 🧠 NeuroBridge v1.0 — Cognitive I/O Platform
 
-**NeuroBridge** — is a high-bandwidth, minimalist interface designed for Systems Architects and Developers. It eliminates the cognitive friction of manual typing by decoupling input/output streams and leveraging local GPU acceleration.
+**NeuroBridge** — is a minimalist, high-performance interface designed for systems architects and power users to bridge the gap between human thought and digital execution. It expands the bandwidth of human-computer interaction by replacing manual typing with low-latency neural transcription.
 
 ![AI-Powered](https://img.shields.io/badge/AI--Powered-FF6F00?style=for-the-badge&logo=openai&logoColor=white)
 ![Python 3.12](https://img.shields.io/badge/Python-3.12-3776AB?style=for-the-badge&logo=python&logoColor=white)
@@ -14,72 +14,85 @@
 
 ---
 
-## ✨ Key Features
+### ✨ Key Features
 
 *   🎙️ **Neural Voice Input:** Instant voice-to-cursor transcription using `Faster-Whisper` (large-v3-turbo).
 *   🔊 **High-Speed Auditory Bridge:** Rapid content ingestion via Microsoft Edge Neural TTS at 2x+ speed.
 *   🛡️ **Privacy First:** 100% local voice processing on your GPU. Your technical thoughts never leave your machine.
-*   ⚙️ **Zero-UI Interaction:** No windows, no buttons. Operates as an invisible layer of the OS via global hotkeys.
-*   🚀 **Visual-Auditory Anchoring:** Parallel consumption of text through audio and Edge's visual "Heads-Up Display".
+*   ⚙️ **Zero-UI Interaction:** Operates as an invisible layer of the OS via global hotkeys. No windows, no clutter.
 
 ---
 
-## 🏛 Philosophy: Bandwidth Expansion
+### 🏛 Philosophy: Bandwidth Expansion
 
-NeuroBridge treats the Operating System as a fluid layer. It is built for those who think and read faster than they can type.
+NeuroBridge is built on the premise that we can think and read much faster than we can type.
 
-*   **Fast Data Dump:** Offload complex architectural thoughts directly into your IDE/Terminal without breaking the state of "Flow".
-*   **Rapid Ingestion:** Consume documentation and articles through high-fidelity neural voices while maintaining visual focus.
+*   **Fast Data Dump (Input):** Offload complex thoughts directly into your IDE/Terminal without breaking the state of "Flow".
+*   **Rapid Ingestion (Output):** Consume documentation through high-fidelity neural voices while maintaining visual focus on the code.
 
 ---
 
-## 🛠 Technical Stack
+### 🛡 Engineering & Privacy
 
-*   **Runtime:** Python 3.12 (Optimized for Windows 11)
+NeuroBridge employs a hybrid architecture to balance absolute privacy with high-quality synthesis:
+
+1.  **Sovereign Local Input (100% Secure):** Speech-to-Text (STT) is handled entirely on your local GPU. **Zero-telemetry.**
+2.  **Edge-Neural Output:** Text-to-Speech (TTS) utilizes Microsoft’s advanced neural engines via the Edge API for superior phonetic clarity.
+3.  **Zero-UI:** The system lives in your system tray and is controlled via global hotkeys.
+
+---
+
+### ⚠️ Known Limitations (v1.0)
+
+*   **Language Switching:** Language detection is performed on the entire text block. Seamless on-the-fly switching is a roadmap feature for v2.0.
+*   **Phonetic Accuracy:** In mixed-language blocks, the primary language's voice is used, which may result in accented pronunciation of foreign technical terms.
+
+---
+
+### 🛠 Technical Stack
+
+*   **Runtime:** Python 3.12 (Optimized for Windows 10/11)
 *   **ML Core:** CTranslate2 / Faster-Whisper (GPU-bound)
-*   **Acceleration:** CUDA 12.x / cuDNN (Optimized for NVIDIA RTX 30/40 series)
-*   **OS Bridge:** Win32 API, `pystray` background state-machine.
+*   **Acceleration:** CUDA 12.x / cuDNN (Requires NVIDIA RTX 30/40 series)
+*   **I/O Logic:** Win32 API, `pystray` for state management, `edge-tts` synchronization.
 
 ---
 
-## 🚀 Installation
+### 🚀 Installation
 
-### 1. Clone the repository:
-```bash
-git clone https://github.com/SanMog/NeuroBridge.git
-cd NeuroBridge
-```
+1.  **Clone the repository:**
+    ```bash
+    git clone https://github.com/SanMog/NeuroBridge.git
+    cd NeuroBridge
+    ```
 
-### 2. Initialize environment:
-```bash
-python -m venv .venv
-.venv\Scripts\activate
-pip install -r requirements.txt
-```
+2.  **Initialize environment:**
+    ```bash
+    python -m venv .venv
+    .venv\Scripts\activate
+    pip install -r requirements.txt
+    ```
 
-### 3. Hardware Setup:
-*   Ensure **NVIDIA CUDA Toolkit** is installed.
-*   The system will automatically download the `large-v3-turbo` model on the first run.
+3.  **Execution:**
+    Run `NeuroLauncher.vbs` to initialize the bridge as a background service.
 
 ---
 
-## 🕹 Usage Protocol
+### 🕹 Usage Protocol
 
 | Command | Action | System Response |
 | :--- | :--- | :--- |
 | **Record** | Hold `F4` | Speech is typed instantly at cursor position. |
-| **Listen** | `Ctrl + Q` | Clipboard content is read aloud in HUD mode. |
+| **Listen** | `Ctrl + Q` | Clipboard is read aloud via Edge Neural HUD. |
 | **Manage** | Right-Click Tray | Restart engines or exit system safely. |
 
 ---
 
-## 🎓 Professional Impact
-NeuroBridge demonstrates architectural innovation in Human-Computer Interaction (HCI) by reducing task-switching latency and implementing secure, air-gapped transcription pipelines for sensitive engineering data.
-
-**Architect:** Alexander Mogilin  
+**Architect:** SanMog
 **Status:** 🟢 Operational | v1.1  
-**License:** MIT
+**License:** MIT  
 
 *"The system lives where your focus is."*
 
 ***
+
