@@ -1,50 +1,59 @@
 
----
+***
 
-# ⌨️ NeuroBridge — Cognitive Interface
+# NeuroBridge v1.0 — Cognitive I/O Platform
 
-![Python](https://img.shields.io/badge/python-3.10%2B-blue.svg)
-![Platform](https://img.shields.io/badge/platform-Windows-lightgrey.svg)
-![License](https://img.shields.io/badge/license-MIT-green.svg)
-![GPU](https://img.shields.io/badge/acceleration-CUDA-orange.svg)
+> **"The fingers are the bottleneck of the mind. NeuroBridge expands that bandwidth."**
 
-**NeuroBridge** is a high-bandwidth, minimalist voice-to-logic interface engineered for Systems Architects and Senior Developers. By decoupling input/output streams and leveraging local GPU acceleration, it eliminates the cognitive friction of typing and manual context switching.
+NeuroBridge is a minimalist, high-performance interface designed for systems architects, developers, and power users who need to bridge the gap between human thought and digital execution. It treats the OS as a fluid layer, replacing manual typing with low-latency neural transcription and high-speed auditory consumption.
 
-> *"The fingers are the bottleneck of the mind. NeuroBridge expands that bandwidth."*
+## 🏛 Philosophy: Bandwidth Expansion
 
----
+NeuroBridge is built on the premise that we can think and read much faster than we can type. 
 
-## 🏛 The Philosophy of "Invisible" Interaction
-
-Traditional AI interfaces force the user into a browser tab or a dedicated application window, breaking the state of **Flow**. **NeuroBridge** operates as an invisible layer of the operating system, living entirely in your system tray and your ears.
-
-### 🛡 Core Engineering Pillars:
-*   **Sovereign Local Compute:** Voice transcription is handled locally via `Faster-Whisper` running on a dedicated CUDA-accelerated pipeline. Your private technical thoughts never leave your local environment.
-*   **Zero-UI Interaction:** Global hotkeys and minimalist system tray indicators replace traditional buttons and windows, reducing visual noise and mental load.
-*   **Dual-Neural Synthesis:** An intelligent language detection engine switches between specific neural voices (Svetlana/Jenny) to ensure perfect phonetic clarity for multi-language technical environments (RU/EN).
+*   **Fast Data Dump (Input):** Instant voice-to-cursor transcription allows you to offload complex thoughts without losing the state of "Flow."
+*   **Fast Content Ingestion (Output):** High-speed (2x+) auditory consumption paired with visual reinforcement (Edge Reader) accelerates information processing.
 
 ---
 
-## 🚀 Key Features
+## 🛡 Engineering & Privacy
 
-### 🎙 Neural Voice Input (F4)
-*   **Engine:** Powered by `Faster-Whisper (large-v3-turbo)` for real-time, high-fidelity transcription.
-*   **Logic:** Speech-to-Text conversion is coupled with an automatic hardware-level cursor insertion (Ctrl+V simulation).
-*   **Workflow:** Hold **F4**, speak your thought, release. The text appears instantly at your cursor, whether you are in an IDE, terminal, or document.
+NeuroBridge employs a hybrid architecture to balance absolute privacy with high-quality synthesis:
 
-### 🔊 Edge-Neural Output Bridge (Ctrl+Q)
-*   **Mechanism:** Captures clipboard data, sanitizes digital noise (emojis, markup, metadata), and generates a clean-room HTML HUD (Heads-Up Display).
-*   **Acoustics:** Leverages Microsoft’s advanced **Neural Online Voices** for a human-like auditory experience.
-*   **Intelligent Switching:** Automatically detects language blocks to prevent "accented" reading, providing native-level pronunciation for both Russian and English.
+1.  **Sovereign Local Input (100% Secure):** Speech-to-Text (STT) is handled entirely on your local GPU using the `Faster-Whisper` pipeline. Your private technical discussions, passwords, and code logic never leave your machine. **Zero-telemetry.**
+2.  **Edge-Neural Output:** Text-to-Speech (TTS) utilizes Microsoft’s advanced neural engines via the Edge API for superior phonetic clarity.
+3.  **Zero-UI Interaction:** No buttons, no windows, no visual noise. The system lives in your system tray and is controlled via global hotkeys.
+
+---
+
+## 🚀 Key Features (v1.0)
+
+### 🎙 Neural Voice Input (Hold `F4`)
+*   **Engine:** `Faster-Whisper` (large-v3-turbo model).
+*   **Mechanism:** Push-to-talk logic. Once you release the hotkey, the audio is processed and the text is instantly injected directly into your active cursor position (IDE, Terminal, Slack, etc.) via hardware-level simulation.
+*   **Performance:** Highly optimized for NVIDIA GPUs (CUDA), achieving near-instantaneous inference.
+
+### 🔊 High-Speed Auditory Bridge (Press `Ctrl + Q`)
+*   **Mechanism:** Captures the current clipboard content, sanitizes metadata, and launches the Microsoft Edge Neural Reader.
+*   **Workflow:** Allows for "Visual-Auditory Anchoring." You can listen to documentation at 2x speed in the background or follow the highlighted text in the HUD for maximum retention.
+
+---
+
+## ⚠️ Known Limitations (v1.0)
+
+*   **Language Switching:** Language detection is performed on the entire text block before processing.
+    *   If the text is predominantly Russian, the "Svetlana" voice is used.
+    *   If the text is predominantly English, the "Jenny" voice is used.
+*   **Phonetic Accuracy:** In mixed-language blocks (e.g., Russian text with English technical terms), the system will use the primary language's voice, which may result in accented pronunciation of foreign terms. Seamless on-the-fly voice switching is a roadmap feature for v2.0.
 
 ---
 
 ## 🛠 Technical Stack
 
-*   **Runtime:** Python 3.12 (Optimized for Windows 11)
-*   **Core ML:** CTranslate2 / Faster-Whisper (GPU-bound)
-*   **Acceleration:** CUDA 12.x / cuDNN (Optimized for NVIDIA RTX 30/40 series)
-*   **Interface:** Win32 API, `pystray` for background state-machine, `edge-tts` synchronization.
+*   **Runtime:** Python 3.12 (Optimized for Windows 10/11)
+*   **ML Core:** `CTranslate2` / `Faster-Whisper` (GPU-bound)
+*   **Acceleration:** `CUDA 12.x` / `cuDNN` (Requires NVIDIA RTX 30/40 series)
+*   **I/O Logic:** Win32 API, `pystray` for state management, `edge-tts` synchronization.
 
 ---
 
@@ -70,9 +79,8 @@ pip install -r requirements.txt
 ```
 
 ### 3. Execution
-The project includes a **Stealth Launcher** (VBS) to run both Input and Output modules as background services without persistent console windows.
-
-*   Run **`NeuroLauncher.vbs`** to start the system.
+The system includes a **Stealth Launcher (VBS)** to run modules as background services without persistent console windows.
+*   Run `NeuroLauncher.vbs` to initialize the bridge.
 
 ---
 
@@ -80,23 +88,17 @@ The project includes a **Stealth Launcher** (VBS) to run both Input and Output m
 
 | Command | Action | System Response |
 | :--- | :--- | :--- |
-| **Record** | `Hold F4` | Speech is typed instantly at cursor position. |
-| **Listen** | `Ctrl + Q` | Clipboard content is read aloud in HUD mode. |
-| **Manage** | `Right-Click Tray` | Restart engines or exit system safely. |
+| **Record** | Hold `F4` | Speech is typed instantly at cursor position. |
+| **Listen** | `Ctrl + Q` | Clipboard is read aloud via Edge Neural HUD. |
+| **Manage** | Right-Click Tray | Restart engines or exit system safely. |
 
 ---
 
-## 🎓 Professional Impact
-
-NeuroBridge is an **Original Contribution** to the field of Human-Computer Interaction (HCI). It demonstrates architectural innovation in reducing task-switching latency and implementing secure, air-gapped transcription pipelines for sensitive engineering data.
-
----
-
-**Architect:** [Alexander Mogilin](https://github.com/SanMog)  
+**Architect:** Alexander Mogilin  
 **Status:** 🟢 Operational | v1.1  
-**License:** MIT
+**License:** MIT  
 
----
 *"The system lives where your focus is."*
 
----
+***
+
